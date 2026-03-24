@@ -1,7 +1,7 @@
 '''
 Problem #1 Leetcode 501: Find Mode in Binary Search Tree
     Notes:
-        use stack like slides
+        use stack like lecture slides
         stack filled by root
         counter to keep track of each values occurence
         max_freq to store highest occuring value
@@ -10,6 +10,9 @@ Problem #1 Leetcode 501: Find Mode in Binary Search Tree
 '''
 class Solution:
     def findMode(self, root: Optional[TreeNode]) -> List[int]:
+        if not root:
+            return []
+
         stack = [root]
         counter = defaultdict(int)
 
@@ -33,7 +36,7 @@ Problem #2 Leetcode 112: Path Sum
             - base case, no root, returns false
             - no more branches on left or right side and target sum is achieved, returns true
             - still has more branches to evaluate, takes target and subtracts root.left or root.right 
-                value until no branches remain, and target is reached
+                value until no branches remain, and target is reached, sum carried down.
         
 '''
 class Solution:
